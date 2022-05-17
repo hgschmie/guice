@@ -504,5 +504,53 @@ See the Apache License Version 2.0 for the specific language governing permissio
     </plugins>
   </build>
 
-  <!-- TODO(cgruber): Update the google parent pom or migrate to sonatype's -->
+    <profiles>
+        <profile>
+            <id>ecotramp</id>
+            <distributionManagement>
+                <snapshotRepository>
+                    <id>ecotramp-snapshots</id>
+                    <name>ecotramp snapshots</name>
+                    <url>https://nexus.intermeta.com/repository/maven-snapshots/</url>
+                </snapshotRepository>
+                <repository>
+                    <id>ecotramp-releases</id>
+                    <name>ecotramp releases</name>
+                    <url>https://nexus.intermeta.com/repository/maven-releases/</url>
+                </repository>
+            </distributionManagement>
+
+            <repositories>
+                <repository>
+                    <id>central</id>
+                    <url>https://nexus.intermeta.com/repository/maven-public/</url>
+                    <releases>
+                        <enabled>true</enabled>
+                        <updatePolicy>never</updatePolicy>
+                        <checksumPolicy>warn</checksumPolicy>
+                    </releases>
+                    <snapshots>
+                        <enabled>false</enabled>
+                        <updatePolicy>interval:180</updatePolicy>
+                        <checksumPolicy>fail</checksumPolicy>
+                    </snapshots>
+                </repository>
+                <repository>
+                    <id>snapshots</id>
+                    <url>https://nexus.intermeta.com/repository/maven-snapshots/</url>
+                    <releases>
+                        <enabled>false</enabled>
+                        <updatePolicy>never</updatePolicy>
+                        <checksumPolicy>warn</checksumPolicy>
+                    </releases>
+                    <snapshots>
+                        <enabled>true</enabled>
+                        <updatePolicy>interval:180</updatePolicy>
+                        <checksumPolicy>fail</checksumPolicy>
+                    </snapshots>
+                </repository>
+            </repositories>
+        </profile>
+    </profiles>
+    <!-- TODO(cgruber): Update the google parent pom or migrate to sonatype's -->
 </project>
