@@ -6,7 +6,7 @@
   <parent>
     <groupId>com.google.inject.extensions</groupId>
     <artifactId>extensions-parent</artifactId>
-    <version>5.1.1-SNAPSHOT</version>
+    <version>5.1.1-ecotramp.1</version>
   </parent>
 
   <artifactId>guice-struts2</artifactId>
@@ -47,4 +47,8 @@
       </plugin>
     </plugins>
   </build>
+
+  <scm>
+    <tag>guice-parent-5.1.1-ecotramp.1</tag>
+  </scm>
 </project>
